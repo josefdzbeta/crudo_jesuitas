@@ -20,8 +20,8 @@ class Crudo{
 		Captura el evento window.onload para iniciar la aplicación.
 	*/
 	constructor(){
-		this.vistaPrincipal = null	//No podemos iniciar hasta que se complete la carga de window.document
-		this.modelo = new Modelo(configuracion.bdNombre, configuracion.bdVersion)
+		$(this).vistaPrincipal = null	//No podemos iniciar hasta que se complete la carga de window.document
+		$(this).modelo = new Modelo(configuracion.bdNombre, configuracion.bdVersion)
 
 		//usamos addEventListener para permitir sobrecargar el evento
 		window.addEventListener('load', this.cargar.bind(this))
@@ -55,20 +55,20 @@ class Crudo{
 	*/
 	listar(){
 		console.log('crudo.listar')
-		this.vistaPrincipal.verListar()
+		$(this).vistaPrincipal.verListar()
 	}
 	/**
 		Atención a la opción de menú "verCrear"
 	*/
 	verCrear(){
-		this.vistaPrincipal.verCrear()
+		$(this).vistaPrincipal.verCrear()
 	}
 	/**
 	Atención al botón Aceptar de VistaCrear. Crea el nuevo objeto
 	@param jesuita {Jesuita} Jesuita a crear.
 	*/
 	aceptarCrear(jesuita){
-		this.modelo.insertar(jesuita, this.listar.bind(this))
+		$(this).modelo.insertar(jesuita, this.listar.bind(this))
 	}
 }
 
