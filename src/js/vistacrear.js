@@ -40,9 +40,9 @@ export class VistaCrear extends Vista{
 	*/
 	registrar(docPlantilla){
 		//Guardamos las referencias a los elementos del interfaz
-		this.html.div = docPlantilla.getElementsByTagName('div')[0]
-		this.html.iNombre = docPlantilla.getElementsByTagName('input')[0]
-		this.html.btnAceptar = docPlantilla.getElementsByTagName('button')[0]
+		this.html.div = $("div:eq(0)", docPlantilla)
+		this.html.iNombre = $("input:eq(0)", docPlantilla)
+		this.html.btnAceptar = $("button:eq(0)", docPlantilla)
 	}
 	/**
 	Asocia los manejadores de eventos a los eventos del documento.

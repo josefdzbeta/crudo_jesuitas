@@ -39,10 +39,10 @@ export class VistaPrincipal extends Vista{
 	*/
 	registrar(docPlantilla){
 		//Guardamos las referencias a los elementos del interfaz
-		this.html.header = docPlantilla.getElementsByTagName('header')[0]
-		this.html.nav = docPlantilla.getElementsByTagName('nav')[0]
-		this.html.main = docPlantilla.getElementsByTagName('main')[0]
-		this.html.footer = docPlantilla.getElementsByTagName('footer')[0]
+		this.html.header = $("header",docPlantilla)
+		this.html.nav = $("nav",docPlantilla)
+		this.html.main = $("main",docPlantilla)
+		this.html.footer = $("footer",docPlantilla)
 	}
 	/**
 	Asocia los manejadores de eventos a los eventos del documento.
