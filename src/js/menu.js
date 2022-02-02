@@ -38,8 +38,8 @@ export class Menu extends Vista{
 	*/
 	registrar(docPlantilla){
 		//Guardamos las referencias a los elementos del interfaz
-		this.html.aListar = docPlantilla.getElementsByTagName('a')[0]
-		this.html.aCrear = docPlantilla.getElementsByTagName('a')[1]
+		this.html.aListar = $("a:eq(0)",docPlantilla)
+		this.html.aCrear = $("a:eq(1)",docPlantilla)
 	}
 	/**
 	Asocia los manejadores de eventos a los eventos del documento.
